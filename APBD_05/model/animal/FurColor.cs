@@ -2,5 +2,9 @@
 
 public enum FurColor
 {
-    
+    Red,
+    Black,
+    White,
+    Mixed,
+    NoFur
 }
