@@ -31,3 +31,4 @@ C:\Users\Volodymyr\RiderProjects\APBD_05\APBD_05\obj\Debug\net8.0\refint\APBD_05
 C:\Users\Volodymyr\RiderProjects\APBD_05\APBD_05\obj\Debug\net8.0\APBD_05.pdb
 C:\Users\Volodymyr\RiderProjects\APBD_05\APBD_05\obj\Debug\net8.0\APBD_05.genruntimeconfig.cache
 C:\Users\Volodymyr\RiderProjects\APBD_05\APBD_05\obj\Debug\net8.0\ref\APBD_05.dll
+C:\Users\Volodymyr\RiderProjects\APBD_05\APBD_05\obj\Debug\net8.0\APBD_05.sourcelink.json
