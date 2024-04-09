@@ -2,5 +2,7 @@
 
 public enum AnimalCategory
 {
-    
+    Cat,
+    Dog,
+    Dragon
 }
