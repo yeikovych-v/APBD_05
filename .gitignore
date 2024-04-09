@@ -1,2 +1,4 @@
 ﻿/APBD_05.sln
-/bin/Debug/*
+APBD_05/bin/Debug/*
+*.dll
+APBD_05/bin

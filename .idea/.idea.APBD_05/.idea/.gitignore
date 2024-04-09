@@ -12,3 +12,6 @@
 /dataSources/
 /dataSources.local.xml
 /bin/Debug/*
+APBD_05/bin/Debug/*
+*.dll
+APBD_05/bin
