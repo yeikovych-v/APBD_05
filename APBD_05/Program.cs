@@ -1,4 +1,6 @@
-using Microsoft.AspNetCore.Http.HttpResults;
+
+using APBD_05.repository;
+using APBD_05.service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddControllers().AddXmlSerializerFormatters();
+builder.Services.AddScoped<IAnimalDatabase, RuntimeAnimalDb>();
+builder.Services.AddScoped<IVisitDatabase, RuntimeVisitDb>();
+builder.Services.AddTransient<MockDbPopulationService>();
 
 var app = builder.Build();
 
@@ -18,12 +25,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var l = new List<string>()
-{
-    "123",
-    "234"
-};
+using var scope = app.Services.CreateScope();
 
-app.MapGet("test", () => Results.Ok(l));
+var mockDbPopulationService = scope.ServiceProvider.GetRequiredService<MockDbPopulationService>();
+
+mockDbPopulationService.MockAnimalRecords();
+mockDbPopulationService.MockAnimalVisits();
+
+app.MapControllers();
 
 app.Run();
