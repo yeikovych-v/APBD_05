@@ -21,7 +21,7 @@ public class RuntimeVisitDb : IVisitDatabase
 
     public List<Visit> FindByAnimal(Animal animal)
     {
-        return AnimalVisits.FirstOrDefault(pair => pair.Key == animal).Value;
+        return AnimalVisits.FirstOrDefault(pair => pair.Key == animal).Value ?? [];
     }
 
     public void AddAll(Animal animal, List<Visit> visits)
